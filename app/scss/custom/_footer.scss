@@ -1,0 +1,20 @@
+// footer logo
+.footer-logo {
+	max-width: 234px;
+}
+
+
+// general
+footer {
+	
+	@include media-breakpoint-down(xs) {
+		.small {
+			font-size: rem(10px);
+		}
+	}
+
+}
+
+
+
+

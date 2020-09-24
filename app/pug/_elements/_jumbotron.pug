@@ -1,0 +1,36 @@
+//- jumbo mixin
+
+mixin jumbo(jumbo)
+
+	//- check if we have data
+	if(jumbo === undefined || jumbo.length == 0)
+		p no data for build	
+
+	//- constructor
+	else
+
+		.jumbo
+
+			// jumbo image 
+			.image-fit.format-10-11.format-275-126-sm.format-95-33-xl.format-xxl
+				picture.photo
+					source(srcset=jumbo.image, media="(min-width: 1000px)")
+					source(srcset=jumbo.imageMd, media="(min-width: 600px)")
+					img(srcset=jumbo.imageSm, alt="Lorem ipsum")
+			
+			if (jumbo.title || jumbo.content || jumbo.viewMore || jumbo.videoLink)
+				// jumbo content 
+				.jumbo-content
+					.container-fluid
+						.row.w-100
+							.col-lg-6
+
+								.content-data
+									h1.text-uppercase.text-white= jumbo.title
+									p.mt-lg-4.mb-lg-5= jumbo.content
+
+									if (jumbo.viewMore)
+										button.btn.btn-primary.text-uppercase View more
+
+									if (jumbo.videoLink)
+										button.btn.btn-outline-white.text-uppercase Video tour

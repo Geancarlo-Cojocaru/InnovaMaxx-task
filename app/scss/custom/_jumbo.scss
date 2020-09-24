@@ -1,0 +1,49 @@
+.jumbo {
+	position: relative;
+}
+
+
+.jumbo-content {
+	display: none;
+
+	@include media-breakpoint-up(lg) {
+		display: flex;		
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+
+		.container-fluid {
+			display: flex;
+			height: 100%;
+			align-items: center;
+		}
+
+		.content-data {
+			padding: 50px 30px;
+			color: #fff;
+			background-color: rgba($gray-900, .7);
+		}
+
+		h1 {
+			margin-bottom: 0;
+		}
+
+		.btn {
+			margin-right: 26px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(xxl) {
+		.row {
+			margin-left: -180px;
+		}
+	}
+
+}

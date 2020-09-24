@@ -1,0 +1,18 @@
+//- custom list
+mixin customList(elements)
+
+	//- check if we have data
+	if(elements === undefined || elements.length == 0)
+		p no data for build	
+
+	//- constructor
+	else
+
+		ol.custom-ordered-list
+
+			each element in elements
+
+				li
+					.list-content
+						h3.text-uppercase= element.title
+						p= element.content

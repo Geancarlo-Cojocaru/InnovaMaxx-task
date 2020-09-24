@@ -1,0 +1,19 @@
+//- person
+mixin person(person)
+
+	//- check if we have data
+	if(person === undefined || person.length == 0)
+		p no data for build	
+
+	//- constructor
+	else
+
+		a.person(href="#")
+
+			.image-fit.format-8-7
+				.photo
+					img.lazy(data-src=person.image, alt="Lorem ipsum")
+
+			.description
+				.display-4.text-uppercase= person.fullName
+				.small= person.function

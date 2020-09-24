@@ -1,0 +1,142 @@
+//
+// Image fit container
+// --------------------------------------------------
+.image-fit {
+	display: block;
+	width: 100%;
+	position: relative;
+
+	&:before {
+		display: block;
+		content: "";
+		pointer-events: none;
+	}
+
+	.photo {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		overflow: hidden;
+		z-index: 1;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		border: none;
+		object-fit: cover;
+		transition: $my-custom-transition;
+
+
+		// POSITIONING
+		&.lt {
+			object-position: left top;
+		}
+		&.ct {
+			object-position: center top;
+		}
+		&.rt {
+			object-position: right top;
+		}
+		&.lc {
+			object-position: left center;
+		}
+		&.rc {
+			object-position: right center;
+		}
+		&.lb {
+			object-position: left bottom;
+		}
+		&.cb {
+			object-position: center bottom;
+		}
+		&.rb {
+			object-position: right bottom;
+		}
+	}
+
+	a > * {
+		transition: none;
+	}
+
+
+	&.border {
+		border-color: rgba(#000, .07) !important;
+	}
+
+
+	// CONTAIN
+	//---------------------------------------
+	&.contain img {
+		object-fit: contain;
+	}
+
+	
+	// FORMAT
+	//---------------------------------------
+	&.format-15-11:before {
+		padding-bottom: 73.3333%; // 11*100/15
+	}
+
+	&.format-8-7:before {
+		padding-bottom: 114.2857%; // 7*100/6
+	}
+
+	&.format-1-1:before {
+		padding-bottom: 100%;
+	}
+
+	&.format-10-11:before {
+		padding-bottom: 110%; // 11*100/10
+	}
+
+	&.format-95-33:before {// hero image desktop
+		padding-bottom: 34.7368%; // 33*100/95
+	}
+
+
+	// sizes only for mobile
+	//---------------------------------------
+	@include media-breakpoint-down(xs) {
+		&.format-15-11-mobile:before {
+			padding-bottom: 73.3333%; // 11*100/15
+		}
+
+		&.format-8-7-mobile:before {
+			padding-bottom: 114.2857%; // 7*100/6
+		}		
+
+		&.format-1-1-mobile:before {
+			padding-bottom: 100%;
+		}
+	}
+
+
+	// sizes only for tablet and up
+	//---------------------------------------
+	@include media-breakpoint-up(sm) {
+		&.format-275-126-sm:before {// hero image tablet
+			padding-bottom: 45.8181%;
+		}
+	}
+
+
+	// sizes only for laptop and up
+	//---------------------------------------
+	@include media-breakpoint-up(xl) {
+		&.format-95-33-xl:before {// hero image desktop
+			padding-bottom: 34.7368%; // 33*100/95
+		}
+	}
+
+	// sizes only for laptop and up
+	//---------------------------------------
+	@media (min-width: 1920px) {
+		&.format-xxl:before {// hero image desktop
+			padding-bottom: 660px;
+		}
+	}
+}

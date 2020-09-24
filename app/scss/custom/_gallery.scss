@@ -1,0 +1,114 @@
+$custom-decoration: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#ffffff' width='20' height='20' viewBox='0 0 20 20'><path d='M20 8h-8V0H8v8H0v4h8v8h4v-8h8z'/></svg>") !default;
+
+.carousel.gallery {
+	padding-left: 28px;
+	padding-right: 28px;
+
+	.info,
+	.decoration {
+		display: none;
+	}
+
+	.carousel-prev,
+	.carousel-next {
+		display: block;
+		position: absolute;
+		margin-top: -15px;
+		left: 0;
+		top: 50%;
+		width: 30px;
+		height: 30px;
+		background: url(#{$path--images}/icons/arrow.png) no-repeat 0 0;
+	}
+
+	.carousel-next {
+		left: auto;
+		right: 0;
+		transform: scaleX(-1);
+	}
+
+	@include media-breakpoint-up(sm) {
+		padding-left: 0px;
+		padding-right: 0px;
+
+		.carousel-prev,
+		.carousel-next {
+			display: none;
+		}
+
+		.carousel-inner {
+			@include make-row();
+			overflow: initial;
+		}
+
+		.carousel-item {
+			padding: 15px;
+			display: block;
+			max-width: 50%;
+			flex: 0 0 50%;
+			margin: 0;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {	
+
+		// caption for photo
+		.info {
+			display: block;
+			position: absolute;
+			padding: 13px 20px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			font-size: rem(18px);
+			color: #fff;
+			text-transform: uppercase;
+			background-color: $secondary;
+			transition: $my-custom-transition;
+			transform: translateY(100%);
+		}
+
+		// decoration
+		.decoration {
+			display: block;
+			width: 20px;
+			height: 20px;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -33px 0 0 -10px;
+			line-height: 1;
+			transition: $my-custom-transition;
+			opacity: 0;
+			transform: scale(0);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background: escape-svg($custom-decoration);
+			pointer-events: none;
+		}
+
+		.carousel-item {
+			max-width: 33.3333%;
+			flex: 0 0 33.3333%;
+
+			// hover anim
+			&:hover {
+				img {
+					opacity: .5;
+					transform: scale(1.09);
+				}
+
+				.info {
+					transform: translateY(0);
+				}
+
+				.decoration {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+		}
+
+	}
+}

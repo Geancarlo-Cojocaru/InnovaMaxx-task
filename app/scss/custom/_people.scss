@@ -1,0 +1,53 @@
+
+// person
+.person {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	line-height: 1.2;
+	background-color: $light;
+
+	.description {
+		flex: 1 1 auto;
+		padding: 14px 14px;
+		color: $body-color;		
+		transition: $my-custom-transition;
+	}
+
+	.display-4 {
+		margin-bottom: rem(4px);
+		color: $dark;
+		transition: $my-custom-transition;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	@include media-breakpoint-up(lg) {
+		.description {
+			padding: 17px 20px;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		&:hover {
+
+			.description {
+				color: #fff;
+				background-color: $dark;				
+			}
+
+			.display-4 {
+				color: #fff;
+			}
+
+			.image-fit .photo img {
+				opacity: .6;
+				transform: scale(1.1);
+			}
+
+		}
+	}
+
+}

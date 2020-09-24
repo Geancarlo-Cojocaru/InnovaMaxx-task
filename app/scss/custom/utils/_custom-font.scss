@@ -1,0 +1,14 @@
+// import custom fonts
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('#{$path--fonts}/HelveticaNeue.woff2') format('woff2'),
+	url('#{$path--fonts}/HelveticaNeue.woff') format('woff'),
+	url('#{$path--fonts}/HelveticaNeue.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Helvetica Neue Bold';
+	src: url('#{$path--fonts}/HelveticaNeueBold.woff2') format('woff2'),
+	url('#{$path--fonts}/HelveticaNeueBold.woff') format('woff'),
+	url('#{$path--fonts}/HelveticaNeueBold.ttf') format('truetype');
+}

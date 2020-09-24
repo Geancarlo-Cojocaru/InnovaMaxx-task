@@ -1,0 +1,27 @@
+//- gallery
+mixin gallery(items)
+
+	//- check if we have data
+	if(items === undefined || items.length == 0)
+		p no data for build	
+
+	//- constructor
+	else
+
+		#carouselGallery.carousel.slide.gallery(data-ride='carousel', data-interval='0')
+			.carousel-inner
+
+				each item, index in items
+
+					.carousel-item.col-sm-6.col-lg-4(class= - (index == 0) ? 'active' : '')
+						a.image-fit.format-15-11(href='#')
+							.photo
+								img.lazy(data-src= item.image, alt="Lorem ipsum")
+								.info= item.caption
+								.decoration
+
+
+			a.carousel-prev(href='#carouselGallery', role='button', data-slide='prev')
+				span.sr-only Previous
+			a.carousel-next(href='#carouselGallery', role='button', data-slide='next')
+				span.sr-only Next

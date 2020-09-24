@@ -1,0 +1,20 @@
+//- service
+mixin service(service)
+
+	//- check if we have data
+	if(service === undefined || service.length == 0)
+		p no data for build	
+
+	//- constructor
+	else
+		.service
+
+			if (service.image)
+				img.lazy(data-src= service.image, alt="Lorem ipsum")
+
+			h4.text-uppercase= service.title
+
+			p= service.content
+
+
+		

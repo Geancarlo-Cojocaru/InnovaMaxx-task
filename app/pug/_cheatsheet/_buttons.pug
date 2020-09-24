@@ -1,0 +1,68 @@
+//- BUTTONS
+//-=========================================================================
+
+h1.cheatsheet Buttons
+.row
+
+
+	.col-xl-6
+		p.cheatsheet Normal buttons
+		// normal buttons 
+		button.btn.btn-primary.text-uppercase(type="button") Primary
+		button.btn.btn-secondary.text-uppercase(type="button") Secondary
+		button.btn.btn-success(type="button") Success
+		button.btn.btn-danger(type="button") Danger
+		button.btn.btn-warning(type="button") Warning
+		button.btn.btn-info(type="button") Info
+		button.btn.btn-light(type="button") Light
+		button.btn.btn-dark(type="button") Dark
+		button.btn.btn-white(type="button") White
+		button.btn.btn-link(type="button") Link
+
+
+	.col-xl-6
+		p.cheatsheet Outline buttons
+		// outline buttons 
+		button.btn.btn-outline-primary(type="button") Primary
+		button.btn.btn-outline-secondary(type="button") Secondary
+		button.btn.btn-outline-success(type="button") Success
+		button.btn.btn-outline-danger(type="button") Danger
+		button.btn.btn-outline-warning(type="button") Warning
+		button.btn.btn-outline-info(type="button") Info
+		button.btn.btn-outline-light(type="button") Light
+		button.btn.btn-outline-dark(type="button") Dark
+		button.btn.btn-outline-white(type="button") White
+
+
+	.col-xl-6
+		p.cheatsheet Button sizes; clasa 'btn-mobil' face butonul mai mic doar pe mobil; se poate aplica pe oricare mărime
+		// button sizes 		
+		button.btn.btn-primary.btn-lg(type="button") Large button
+		button.btn.btn-primary.btn-sm(type="button") Small button
+		button.btn.btn-primary.btn-block(type="button") Block level button
+
+
+	.col-xl-6
+		p.cheatsheet Button tags
+		// button tags
+		a.btn.btn-primary(href="#", role="button") Link
+		button.btn.btn-primary(type="submit") Button
+		input.btn.btn-primary(type="button", value="Input")
+		input.btn.btn-primary(type="submit", value="Submit")
+		br
+		a.btn.btn-outline-primary(href="#", role="button") Link
+		button.btn.btn-outline-primary(type="submit") Button
+		input.btn.btn-outline-primary(type="button", value="Input")
+		input.btn.btn-outline-primary(type="submit", value="Submit")
+
+
+	.col-xl-6
+		p.cheatsheet Custom ordered list
+
+		ol.custom-ordered-list
+			-for (let i = 0; i < 3; i++) {
+				li
+					.list-content
+						h3.text-uppercase Lorem ipsum dolor sit
+						p Sed blandit nisi urna, sed pellentesque enim consectetur vitae. Suspendisse ut vehicula nibh.
+			-}

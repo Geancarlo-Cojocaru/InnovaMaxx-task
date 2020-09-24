@@ -1,0 +1,92 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Task page';
+
+//- data
+include _data/_data1.pug
+
+
+
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body
+
+
+
+		// JUMBOTRON
+		include _elements/_jumbotron.pug
+		+jumbo(page.hero)
+
+
+
+		// ABOUT
+		section.container-fluid.mt-8.mb-8.mt-lg-10.mb-lg-10.mb-xl-9
+
+			if (page.about.title)
+				h1.custom-title.text-uppercase= page.about.title
+
+			.row
+
+				// content 
+				.col-lg-6
+					if (page.about.content)
+						| !{page.about.content}
+
+				// custom list 
+				.col-lg-6.mt-5.mt-lg-0
+					include _elements/_custom-list.pug
+					+customList(page.about.list)
+
+
+
+		// TEAM 
+		section.border-top
+			.container-fluid.mt-8.mb-9.mt-lg-10.mb-lg-10.mb-xl-10
+				h1.custom-title.text-uppercase= page.team.title
+
+				// persons
+				include _elements/_person.pug
+				.row
+
+					each person in page.team.persons
+						.col-6.col-lg-3.pt-3.pb-1.pb-sm-3
+							+person(person)
+
+
+
+		// GALLERY 
+		section.bg-dark.pt-8.pb-9.pt-lg-10.pb-lg-10.pb-xl-10
+			.container-fluid.text-center.text-xl-left
+				h1.custom-title.line-red.text-white.text-uppercase.d-inline-block.pb-2.pb-sm-0= page.gallery.title
+
+				// images 
+				include _elements/_gallery.pug
+				+gallery(page.gallery.images)
+
+				// more 
+				- if(page.gallery.showMore)
+				.text-center.mt-8.mt-md-7
+					button.btn.btn-outline-white.text-uppercase Show me more 
+
+
+
+		// SERVICES 
+		.section.container-fluid.text-center.text-xl-left.mt-8.mb-9.mt-lg-10.mb-lg-10.mb-xl-10
+			h1.custom-title.text-uppercase.d-inline-block= page.services.title
+
+			// services listing 
+			include _elements/_services.pug
+			.row.text-center
+
+				each service in page.services.servicesList
+					.col-6.col-xl-3.pt-5
+						+service(service)
+
+
+		// FOOTER 
+		include _elements/_footer.pug
