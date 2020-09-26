@@ -1,6 +1,6 @@
 # InnovaMaxx task
 
-The template page is fully responsive (mobile, tablets, laptop, desktop) and it will be displayed identically in all modern browsers. The distribution files are located in the 'dist' folder and the development files can be found in the 'app' folder.
+The template page is fully responsive (mobile, tablets, laptop, desktop) and it will be displayed identically in all modern browsers. The distribution files (compiled html, css, javascript & images) are located in the 'dist' folder and the development files can be found in the 'app' folder.
 
 ## Features
 
